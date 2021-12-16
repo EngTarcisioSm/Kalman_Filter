@@ -31,8 +31,44 @@
         - Erros na estimativa (Erro Anterior)
             - Quando na primeira iteração utilizando o erro original estimado 
             - A cada iteração o Cálculo do Novo Erro (3) é atribuido ao Erro na estimativa
+            - Há uma relação entre o erro na estimativa e o erro de dados em que ao analisar aquele com o menor valor terá maior peso sobre o calculo do ganho de kalman
+
+- Estimativa Atual
+    - É calculada utilizando 
+        - O ganho de Kalman 
+        - A Estimativa anterior 
+            - Caso seja o primeiro ciclo, utiliza-se a "estimativa original". Em filtros kalman, a "estimativa original" não importa muito pois há uma kconvergencia muito rápida no filtro kalman 
+        - O Valor medido (Dados de entrada)
+        - Será atribuido um peso tanto a estimativa anterior como ao valor medido (função atribuida ao ganho de kalman). Ambos os valores serão utilizados entretanto com pesos diferentes 
+- Calculo de Novo Erro de Estimativa
+    - O calculo da nova estimativa de erro é efetuado com os dados 
+        - Ganho Comum 
+        - Estimativa atual
+    - O Calcumo da nova estimativa de erro é utilizado no proximo ciclo 
+
+- A cada no ciclo do filtro a estimativa atual se aproxima mais e mais do valor real
+
+- Diagrama do Filtro de Kalman
+    ![Grafico_Temperatura](img\kalman_diagrama.jpg)
 
 
-https://www.youtube.com/watch?v=tk3OJjKTDnQ&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=2
+## Ganho Comum (Ganho de Kalman)
 
-PAREI EM 02:15
+- O ganho de Kalman é usado para determinar o valor da nova estimativa 
+- Calculo do Ganho comum é um calculo entre estimativa de erro  e erro na medição.<br> 
+![diagrama 002](img\diagrama002.png)
+
+- Fórmula:<br>
+![formulario 001](img\formula001.png)
+
+## Estimativa Atual
+- Diagrama da estimativa atual.<br>
+![diagrama 003](img\diagrama003.png)
+
+- Fórmula:<br>
+![formulario 002](img\formula002.png)
+
+
+## Onde eu parei 
+- https://www.youtube.com/watch?v=fpRb1sjFz_M&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=3
+- Tempo: 01:40
