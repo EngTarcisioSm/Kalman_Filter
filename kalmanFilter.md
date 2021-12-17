@@ -58,17 +58,25 @@
 - Calculo do Ganho comum é um calculo entre estimativa de erro  e erro na medição.<br> 
 ![diagrama 002](img\diagrama002.png)
 
-- Fórmula:<br>
+- Fórmula(I):<br>
 ![formulario 001](img\formula001.png)
 
 ## Estimativa Atual
 - Diagrama da estimativa atual.<br>
 ![diagrama 003](img\diagrama003.png)
 
-- Fórmula:<br>
-![formulario 002](img\formula002.png)
+- Fórmula(II):<br>
+![formulario 002](\img\formula002.png)
 
 
-## Onde eu parei 
-- https://www.youtube.com/watch?v=fpRb1sjFz_M&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT&index=3
-- Tempo: 01:40
+## Observações quanto ao Ganho Comum ou Ganho de Kalman
+
+- Quanto mais proximos do valor 1 Kg se encontra maior é precisão das medidas (MEA), consequentemente mais imprecisas são as estimativas (ESTt). Quanto maior a precisão nas medidas, maior a estabilidade nas estimativas
+
+- Se KG é grande vendo do ponto de vista da formula (I), significa que o Erro de medição é muito pequeno (logo as medições são muito precisas (MEA formula (II))). Desta forma quando KG é muito grande (proximo de 1) e Medição (MEA formula (II)) contribui muito para o valor da estimativa atual. Ao colocarmos um valor de KG alto esta se dando alta importancia na diferença existente entre MEA e ESTt-1 (formula II) aplicada a atualização da estimativa atual.
+
+- Se KG é muitissiomo pequeno, significa que o erro na medição é muito grande (Emea formula (I)) significa que o erro na estimativa será muito pequeno gerando um KG muito pequeno (formula (I)). Desta forma como o KG é muito pequeno se deduz que não queremos colocar uma importancia muito grande na diferença entre a medição (MEA) e a estimativa anterior (MEA - ESTt-1 formula (II)). Isso indica também que as estimativas atuais estão se tornando mais estáveis pois como KG é muito pequena estamos somando a estimativa anterior apenas uma pequenissima fração da diferença citada acima (MEA - ESTt-1). Contra partida a estabilização das estimativas temos a instabilidade das medições (MEA). Nesta situação de KG pequeno deseja-se apenas que o calculo de estimativas atuais faça apenas pequenas correções na estimativa atual 
+
+- Ao observar KG cada vez menor é então plausivel associar que as estimativas estão mais perto do valor real e os valores reais estão cada vez mais imprecisos (ter uma grande aplitude "incerteza")
+
+- KG descreve o quanto o delta (MEA - ESTt-1) impacta na atualização da estimativa atual 
