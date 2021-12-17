@@ -66,7 +66,7 @@
 ![diagrama 003](img\diagrama003.png)
 
 - Fórmula(II):<br>
-![formulario 002](\img\formula002.png)
+![formulario 002](img\formula002.png)
 
 
 ## Observações quanto ao Ganho Comum ou Ganho de Kalman
@@ -80,3 +80,15 @@
 - Ao observar KG cada vez menor é então plausivel associar que as estimativas estão mais perto do valor real e os valores reais estão cada vez mais imprecisos (ter uma grande aplitude "incerteza")
 
 - KG descreve o quanto o delta (MEA - ESTt-1) impacta na atualização da estimativa atual 
+
+- Tabela de relação Medições x Ganho (peso) Kalman x Estimativas. <br>
+    ![tabela 001](img\tabela001.png)
+
+## Calculos do Filtro de Kalman 
+
+- O filtro de Kalman é composto por 3 equações principais;
+- São três equações iterativas que são feitas uma após a outra, obtendo um conjunto de dados;
+    - Calculo/Recalculo do ganho de Kalman (I)
+    - Calculo/Recalculo de estimativa atual (II)
+    - Calculo/Recalculo de erro de estimativa (III)<br>
+    ![formula 003](img\formula003.png)
