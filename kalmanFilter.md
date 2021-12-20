@@ -92,3 +92,28 @@
     - Calculo/Recalculo de estimativa atual (II)
     - Calculo/Recalculo de erro de estimativa (III)<br>
     ![formula 003](img\formula003.png)
+
+- Mesmo repetido, há uma correlação forte entre entre o ganho de Kalman e a o calculo de estimativa atual. Quando o erro de estimativa é alto e erro de medida é baixo, KG é alto, logo no calculo de estimativa, o valor da diferença entre a estimativa anterior e o valor medido tem um peso maior na estimativa atual. Quando o Erro de medida é alto e o Erro de estimativa é baixo o ganho de Kalman tende a ser baixo  indicando que o valor estimado esta muito proximo do valor real acarrentando que o valor de diferença entre a medida e a estimativa anterior não deve ter um peso muito grande na medição. 
+
+- O ganho de kalman é fortemente influenciado pelo erro de medida, com base nele tem-se a ideia de convergencia rápida ou não para o valor de medida real
+
+- Kalman permite chegar ao valor desejado do real o mais rápido possivel 
+
+- Sabe-se que a estimativa calculada esta boa quando sua oscilação esta muito baixa
+
+## EXEMPLO NUMÉRICO 
+
+- Exemplo numérico para auxiliar va visualização de como o filtro de kalman funciona: 
+    - Exemplo se baseia em encontrar a temperatura verdadeira em um sistema: 
+        - Estimativa inicial: 68
+        - Erro inicial de Estimativa: 2 
+        - Medição inicial: 75
+        - Erro de medição: 4 
+    
+![passo 01](img\passo01.png)
+![passo 02](img\passo02.png)
+![passo 03](img\passo03.png)
+![passo 04](img\passo04.png)
+![passo 05](img\passo05.png)
+![passo 06](img\passo06.png)
+![passo 07](img\passo07-tabela.png)
